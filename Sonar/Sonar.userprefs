@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{23311826-676A-6CFC-15F4-0622AA02736B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="28" Column="13" />
+      <File FileName="Assets/Scripts/WeaponController.cs" Line="41" Column="16" />
+      <File FileName="Assets/Scripts/TowerHealthController.cs" Line="8" Column="5" />
+      <File FileName="Assets/CameraFollowScript.cs" Line="5" Column="44" />
+      <File FileName="Assets/EnemyMovementController.cs" Line="17" Column="41" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Sonar PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
