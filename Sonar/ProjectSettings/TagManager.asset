@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Projectile
   - Undefined
+  - DJ
   layers:
   - Default
   - TransparentFX
