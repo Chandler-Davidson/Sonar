@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
         // Update player location
         playerRb.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
+        //playerRb.velocity = Vector3.zero;
 	}
 
     private void OnCollisionEnter(Collision collision)

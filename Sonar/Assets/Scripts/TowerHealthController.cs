@@ -21,14 +21,22 @@ public class TowerHealthController : MonoBehaviour
     public AudioClip EffectSound;
     private AudioSource dj;
 
+    GameObject towerManager;
+    int id;
+
+    public bool getAlive() { return towerAlive; }
+
 	// Use this for initialization
 	void Start ()
     {
+        id = TowerManager.towerId++;
         towerAlive = true;
 
         dj = FindObjectOfType<AudioSource>();
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        towerManager = GameObject.Find("Tower Manager");
 
         if (HitEffect == null)
         {
@@ -94,6 +102,8 @@ public class TowerHealthController : MonoBehaviour
     {
         towerAlive = false;
         spriteRenderer.sprite = BeaconPhases[BeaconPhases.Length - 1];
+
+        towerManager.GetComponent<TowerManager>().TowerOnline(id);
         print("TOWER COMPLETE");
     }
 }
