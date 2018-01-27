@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// ------- NOT SURE IF NEEED/WANTED -------
-
 public class CameraFollowScript : MonoBehaviour
 {
     public Transform PlayerPosition;
@@ -18,6 +16,9 @@ public class CameraFollowScript : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = PlayerPosition.position + CameraOffest;
+        if (PlayerPosition != null)
+        {
+            transform.position = PlayerPosition.position + CameraOffest;
+        }
     }
 }

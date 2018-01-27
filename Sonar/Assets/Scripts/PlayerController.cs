@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public int playerHealth;
     public float playerSpeed;
+    private Rigidbody playerRb;
 
     void Start()
     {
-
+        playerRb = gameObject.GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -19,8 +20,8 @@ public class PlayerController : MonoBehaviour
         dir.Normalize();
 
         // Update player location
-        transform.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
-    }
+        playerRb.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
+	}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,5 +36,13 @@ public class PlayerController : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // Prevents any 'bounce back' from wall
+		if (collision.gameObject.tag == "Wall") {
+			playerRb.velocity = new Vector3(0, 0, 0);
+		}
     }
 }
