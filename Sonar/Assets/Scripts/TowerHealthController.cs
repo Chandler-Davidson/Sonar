@@ -32,7 +32,7 @@ public class TowerHealthController : MonoBehaviour
         id = TowerManager.towerId++;
         towerAlive = true;
 
-        //dj = FindObjectOfType<AudioSource>();
+        dj = FindObjectOfType<AudioSource>();
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
