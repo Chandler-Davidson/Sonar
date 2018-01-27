@@ -7,6 +7,9 @@ public class TowerHealthController : MonoBehaviour
     public int towerDataLeft;
     private bool towerAlive;
 
+    public GameObject player;
+    public GameObject Sonar;
+
     // sprite array for different power up levels
     public Sprite[] BeaconPhases = new Sprite[6];
     private SpriteRenderer spriteRenderer;
@@ -19,7 +22,8 @@ public class TowerHealthController : MonoBehaviour
     private AudioSource dj;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         towerAlive = true;
 
         dj = FindObjectOfType<AudioSource>();
