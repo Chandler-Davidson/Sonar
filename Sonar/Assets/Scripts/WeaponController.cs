@@ -51,7 +51,7 @@ public class WeaponController : MonoBehaviour
         var mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         var point = Camera.main.ScreenToWorldPoint(mousePos);
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, point - transform.position);
     }
 
     void WeaponFireUpdate()
