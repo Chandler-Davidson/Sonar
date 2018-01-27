@@ -13,15 +13,15 @@ public class PlayerController : MonoBehaviour
         playerRb = gameObject.GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Collect input, normalize
         Vector2 dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         dir.Normalize();
 
         // Update player location
-        playerRb.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
-        //playerRb.velocity = Vector3.zero;
+        transform.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
+        playerRb.velocity = Vector3.zero;
 	}
 
     private void OnCollisionEnter(Collision collision)
