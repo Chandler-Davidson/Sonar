@@ -9,7 +9,7 @@ TagManager:
   - Bullet
   - Projectile
   - Undefined
-  - DJ
+  - Wall
   layers:
   - Default
   - TransparentFX

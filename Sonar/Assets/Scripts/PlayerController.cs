@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     public int playerHealth;
     public float playerSpeed;
+    private Rigidbody playerRb;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    void Start()
+    {
+        playerRb = gameObject.GetComponent<Rigidbody>();
+    }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         // Collect input, normalize
@@ -19,20 +20,29 @@ public class PlayerController : MonoBehaviour {
         dir.Normalize();
 
         // Update player location
-        transform.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
-    }
+        playerRb.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
+	}
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Enemy") {
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            // Hurt player, only counts collision once. Lets player escape
             playerHealth--;
 
-            if (playerHealth <= 0) {
-                
+            // Die
+            if (playerHealth <= 0)
+            {
+                Destroy(this.gameObject);
             }
         }
     }
 
-    private void Die() {
-        this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    private void OnCollisionExit(Collision collision)
+    {
+        // Prevents any 'bounce back' from wall
+		if (collision.gameObject.tag == "Wall") {
+			playerRb.velocity = new Vector3(0, 0, 0);
+		}
     }
 }
