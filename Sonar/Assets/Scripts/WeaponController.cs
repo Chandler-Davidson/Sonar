@@ -6,28 +6,28 @@ public class WeaponController : MonoBehaviour
 {
     public GameObject gunObject;
 
-	// Projectile to spawn
-	public GameObject bulletProjectile;
-	public GameObject sonarProjectile;
+    // Projectile to spawn
+    public GameObject bulletProjectile;
+    public GameObject sonarProjectile;
 
-	// Location for projectiles to spawn
-	public Transform projectileSpawn;
+    // Location for projectiles to spawn
+    public Transform projectileSpawn;
 
-	// Rate at which projectiles can spawn
-	public float bulletFireRate;
-	public float sonarFireRate;
+    // Rate at which projectiles can spawn
+    public float bulletFireRate;
+    public float sonarFireRate;
 
-	// Used to calculate when next projectile can spawn
-	private float bulletNextFire = 0.0f;
-	private float sonarNextFire = 0.0f;
+    // Used to calculate when next projectile can spawn
+    private float bulletNextFire = 0.0f;
+    private float sonarNextFire = 0.0f;
 
-	public float fireForce;
+    public float fireForce;
 
-	// Use this for initialization
-	void Start()
-	{
+    // Use this for initialization
+    void Start()
+    {
         projectileSpawn = gunObject.transform;
-	}
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -36,27 +36,29 @@ public class WeaponController : MonoBehaviour
         WeaponFireUpdate();
     }
 
-    void WeaponMovementUpdate() {
+    void WeaponMovementUpdate()
+    {
         // Rotate player to follow cursor
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, (Vector3)mousePos - transform.position);
-	}
+    }
 
-    void WeaponFireUpdate() {
-        
-		// Fire bullet, left click
-		if (Input.GetButton("Fire1") && Time.time > bulletNextFire)
-		{
-			bulletNextFire = Time.time + bulletFireRate;
-			Fire(bulletProjectile);
-		}
+    void WeaponFireUpdate()
+    {
 
-		// Fire sonar, right click
-		else if (Input.GetButton("Fire2") && Time.time > sonarNextFire)
-		{
-			sonarNextFire = Time.time + sonarFireRate;
-			Fire(sonarProjectile);
-		}
+        // Fire bullet, left click
+        if (Input.GetButton("Fire1") && Time.time > bulletNextFire)
+        {
+            bulletNextFire = Time.time + bulletFireRate;
+            Fire(bulletProjectile);
+        }
+
+        // Fire sonar, right click
+        else if (Input.GetButton("Fire2") && Time.time > sonarNextFire)
+        {
+            sonarNextFire = Time.time + sonarFireRate;
+            Fire(sonarProjectile);
+        }
     }
 
     // Shoot bullet/sonar

@@ -107,6 +107,7 @@
     <Compile Include="Assets\CameraFollowScript.cs" />
     <Compile Include="Assets\EnemyMovementController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayMusic.cs" />
     <Compile Include="Assets\Scripts\TowerHealthController.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
   </ItemGroup>
