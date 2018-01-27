@@ -70,7 +70,7 @@ public class EnemyMovementController : MonoBehaviour
     {
         // Move to player at max speed
         float step = moveSpeedMax * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
     }
 
     // Update destination
