@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+﻿﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,7 +56,7 @@ public class TowerHealthController : MonoBehaviour
         {
             towerDataLeft--;
 
-            dj.PlayOneShot(EffectSound);
+            //dj.PlayOneShot(EffectSound);
 
             GameObject killThis = Instantiate(HitEffect, EffectSpawnPoint.position, Quaternion.identity);
             Destroy(killThis, 0.5f);
