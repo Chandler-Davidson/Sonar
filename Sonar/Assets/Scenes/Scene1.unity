@@ -587,6 +587,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114682565540990320, guid: 103e95c8cd3f04a16ac6868044645ab0,
+        type: 2}
+      propertyPath: enemyController
+      value: 
+      objectReference: {fileID: 915259855}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 103e95c8cd3f04a16ac6868044645ab0, type: 2}
   m_IsPrefabParent: 0
@@ -791,7 +796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &621840582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1133,6 +1138,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 915259854}
+  - component: {fileID: 915259855}
   m_Layer: 0
   m_Name: EnemyList
   m_TagString: Untagged
@@ -1156,6 +1162,17 @@ Transform:
   m_Father: {fileID: 198948064}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915259855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915259853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b85dfbc2f774fa199df2e3fb6a8b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958785991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1320,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 83a6fde0724d943f294e8de971f7f02a, type: 2}
     - target: {fileID: 1691277429669560, guid: 7e84e1d5cbf61496fa281d082797196b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e84e1d5cbf61496fa281d082797196b, type: 2}
@@ -1512,7 +1529,7 @@ Prefab:
       objectReference: {fileID: 650633423}
     - target: {fileID: 1952883793026936, guid: aec5016336a1d41aa8a542b00a4e417f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aec5016336a1d41aa8a542b00a4e417f, type: 2}
@@ -1537,7 +1554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1531844341
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1726,7 +1743,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 83a6fde0724d943f294e8de971f7f02a, type: 2}
     - target: {fileID: 1691277429669560, guid: 7e84e1d5cbf61496fa281d082797196b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e84e1d5cbf61496fa281d082797196b, type: 2}

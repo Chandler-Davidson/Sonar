@@ -104,10 +104,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraFollowScript.cs" />
-    <Compile Include="Assets\EnemyMovementController.cs" />
-    <Compile Include="Assets\GatewayController.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovementController.cs" />
     <Compile Include="Assets\Scripts\GateBehavior.cs" />
+    <Compile Include="Assets\Scripts\GatewayController.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayMusic.cs" />
