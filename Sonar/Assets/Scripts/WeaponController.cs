@@ -24,6 +24,8 @@ public class WeaponController : MonoBehaviour
 
     public float fireForce;
 
+    public EnemyController enemyController;
+
     // Use this for initialization
     void Start()
     {
@@ -105,6 +107,9 @@ public class WeaponController : MonoBehaviour
         // Fire sonar, right click
         else if (Input.GetButton("Fire2") && Time.time > sonarNextFire)
         {
+            // Alert enemies
+            enemyController.SendSonar(transform.position);
+
             sonarNextFire = Time.time + sonarFireRate;
             Fire(sonarProjectile, dir);
         }
