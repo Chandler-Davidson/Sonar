@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{23311826-676A-6CFC-15F4-0622AA02736B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WeaponController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CameraFollowScript.cs">
     <Files>
+      <File FileName="Assets/Scripts/WeaponController.cs" Line="44" Column="26" />
       <File FileName="Assets/Scripts/PlayerController.cs" Line="24" Column="3" />
-      <File FileName="Assets/Scripts/WeaponController.cs" Line="43" Column="18" />
       <File FileName="Assets/Scripts/TowerHealthController.cs" Line="29" Column="20" />
-      <File FileName="Assets/CameraFollowScript.cs" Line="22" Column="10" />
+      <File FileName="Assets/CameraFollowScript.cs" Line="20" Column="10" />
       <File FileName="Assets/EnemyMovementController.cs" Line="72" Column="41" />
       <File FileName="Assets/GatewayController.cs" Line="9" Column="20" />
       <File FileName="Assets/Scripts/TowerManager.cs" Line="10" Column="25" />

@@ -40,25 +40,23 @@ public class WeaponController : MonoBehaviour
     void WeaponMovementUpdate()
     {
         // Rotate player to follow cursor
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(/*new Vector3(*/Input.mousePosition/*.x, Input.mousePosition.y, Camera.main.nearClipPlane)*/);
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, (Vector3)mousePos - transform.position);
+        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(/*new Vector3(*/Input.mousePosition/*.x, Input.mousePosition.y, Camera.main.nearClipPlane)*/);
+        //transform.rotation = Quaternion.LookRotation(Vector3.forward, (Vector3)mousePos - transform.position);
 
 		////var mousePos = Input.mousePosition;
 		////mousePos.z = Camera.main.nearClipPlane;
 		////var point = Camera.main.ScreenToWorldPoint(mousePos);
 		////Instantiate(Resources.Load("Sphere_Test"), point, transform.rotation);
 
-<<<<<<< HEAD
         //var mousePos = Input.mousePosition;
         //mousePos.z = Camera.main.nearClipPlane;
         //var point = Camera.main.ScreenToWorldPoint(mousePos);
         //transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
-=======
+
         var mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         var point = Camera.main.ScreenToWorldPoint(mousePos);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, point - transform.position);
->>>>>>> 0ee6f8b9fa062ad9964f44b52e01bc7dd752aedc
     }
 
     void WeaponFireUpdate()
