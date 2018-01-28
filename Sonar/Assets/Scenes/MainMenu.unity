@@ -142,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 143, y: -234}
+  m_AnchoredPosition: {x: 251, y: -349}
   m_SizeDelta: {x: 160, y: 40.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &833860617
@@ -164,7 +164,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.45107052, g: 0.6094925, b: 0.75735295, a: 1}
+    m_NormalColor: {r: 0.13725491, g: 0.47450984, b: 0.6039216, a: 1}
     m_HighlightedColor: {r: 0.434, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.209, g: 0.497, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -264,7 +264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 143, y: -283}
+  m_AnchoredPosition: {x: 251, y: -401}
   m_SizeDelta: {x: 160, y: 40.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182150815
@@ -286,7 +286,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.45107052, g: 0.6094925, b: 0.75735295, a: 1}
+    m_NormalColor: {r: 0.13333334, g: 0.454902, b: 0.5803922, a: 1}
     m_HighlightedColor: {r: 0.434, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.209, g: 0.497, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.472, b: 0.19607843, a: 1}
+  m_Color: {r: 0.24705884, g: 0.882353, b: 0.61960787, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.472, b: 0.19607843, a: 1}
+  m_Color: {r: 0.24705882, g: 0.88235295, b: 0.61960787, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
