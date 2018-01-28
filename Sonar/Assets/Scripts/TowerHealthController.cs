@@ -56,7 +56,7 @@ public class TowerHealthController : MonoBehaviour
         {
             towerDataLeft--;
 
-            //dj.PlayOneShot(EffectSound);
+            dj.PlayOneShot(EffectSound);
 
             GameObject killThis = Instantiate(HitEffect, EffectSpawnPoint.position, Quaternion.identity);
             Destroy(killThis, 0.5f);

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         dir.Normalize();
 
         // Update player location
-        transform.position += new Vector3(dir.x, dir.y, 0.0f) * playerSpeed * Time.deltaTime;
+        transform.position += new Vector3(dir.x, 0.0f, dir.y) * playerSpeed * Time.deltaTime;
         playerRb.velocity = Vector3.zero;
 	}
 
