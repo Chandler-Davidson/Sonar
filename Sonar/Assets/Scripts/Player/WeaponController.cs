@@ -35,7 +35,6 @@ public class WeaponController : MonoBehaviour
     Animator anim;
     public AnimationClip idleClip;
     public AnimationClip fireClip;
-    PlayerGlowAnim glowEffect;
     float delta = 0.0f;
     float duration;
 
@@ -49,8 +48,6 @@ public class WeaponController : MonoBehaviour
 
         projectileSpawn = gunObject.transform;
         dj = GameObject.FindObjectOfType<AudioSource>();
-
-        glowEffect = GetComponentInChildren<PlayerGlowAnim>();
     }
 
     void Update()
@@ -141,8 +138,6 @@ public class WeaponController : MonoBehaviour
     {
         anim.Play(fireClip.name);
         delta = duration;
-
-        glowEffect.Animate();
 
         // Spawn gameobject
         GameObject instance = (GameObject)Instantiate(

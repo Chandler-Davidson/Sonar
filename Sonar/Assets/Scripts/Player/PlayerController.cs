@@ -7,9 +7,12 @@ public class PlayerController : MonoBehaviour
     public int playerHealth;
     public float playerSpeed;
     private Rigidbody playerRb;
+    float origY;
+
 
     void Start()
     {
+        origY = transform.position.y;
         playerRb = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
         // Update player location
         transform.position += new Vector3(dir.x, 0.0f, dir.y) * playerSpeed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, origY, transform.position.z);
         playerRb.velocity = Vector3.zero;
 	}
 

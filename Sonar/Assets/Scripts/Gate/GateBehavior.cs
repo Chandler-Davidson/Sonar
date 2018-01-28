@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GateBehavior : MonoBehaviour
 {
-    public GameObject[] BeaconIndicators = new GameObject[3];
+    public GameObject[] BeaconIndicators = new GameObject[5];
 
     bool[] indicatorsOnline;
 
@@ -46,5 +46,19 @@ public class GateBehavior : MonoBehaviour
     public void openGate()
     {
         Debug.Log("Gate is open!");
+        StartCoroutine("LowerGate", 2.0f);
+    }
+
+    IEnumerator LowerGate(float time)
+    {
+        float elapsed = 0;
+        Vector3 start = transform.position;
+        Vector3 end = new Vector3(start.x, start.y - 20, start.z);
+        while (elapsed < time)
+        {
+            transform.position = Vector3.Lerp(start, end, (elapsed / time));
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 }

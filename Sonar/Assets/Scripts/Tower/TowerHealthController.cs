@@ -21,13 +21,13 @@ public class TowerHealthController : MonoBehaviour
 
     GameObject towerManager;
     int id;
+    public bool isFinal = false;
 
     public bool getAlive() { return towerAlive; }
 
 	// Use this for initialization
 	void Start ()
     {
-        id = TowerManager.towerId++;
         towerAlive = true;
 
         dj = FindObjectOfType<AudioSource>();
@@ -38,12 +38,20 @@ public class TowerHealthController : MonoBehaviour
         {
             HitEffect = GameObject.Find("BeaconEffect");
         }
+
+        if (!isFinal)
+        {
+            id = TowerManager.towerId++;
+        }
 	}
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.O) && Input.GetKeyDown(KeyCode.P))
+        {
+            towerManager.GetComponent<TowerManager>().TriggerWin();
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -97,6 +105,15 @@ public class TowerHealthController : MonoBehaviour
     private void TowerComplete()
     {
         towerAlive = false;
+
+        if (isFinal)
+        {
+            towerManager.GetComponent<TowerManager>().TriggerWin();
+
+            Debug.Log("Game win!");
+            return;
+        }
+
 
         towerManager.GetComponent<TowerManager>().TowerOnline(id);
         print("TOWER COMPLETE");
