@@ -10,10 +10,8 @@ public class TowerHealthController : MonoBehaviour
     public GameObject player;
     public GameObject Sonar;
 
-    // sprite array for different power up levels
-    public Sprite[] BeaconPhases = new Sprite[6];
-    private SpriteRenderer spriteRenderer;
-    private int spriteNumber = 0;
+    // make light brighter when hit
+    public Light glowLight;
 
     // emit effect for when hit
     public GameObject HitEffect;
@@ -33,8 +31,6 @@ public class TowerHealthController : MonoBehaviour
         towerAlive = true;
 
         dj = FindObjectOfType<AudioSource>();
-
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         towerManager = GameObject.Find("Tower Manager");
 
@@ -58,10 +54,10 @@ public class TowerHealthController : MonoBehaviour
 
             dj.PlayOneShot(EffectSound);
 
-            GameObject killThis = Instantiate(HitEffect, EffectSpawnPoint.position, Quaternion.identity);
+            GameObject killThis = Instantiate(HitEffect, EffectSpawnPoint.position, Quaternion.Euler(90,0,0));
             Destroy(killThis, 0.5f);
 
-            spriteRenderer.sprite = BeaconPhases[++spriteNumber];
+            glowLight.range += 10;
 
             if (towerDataLeft <= 0) {
                 TowerComplete();
@@ -101,7 +97,6 @@ public class TowerHealthController : MonoBehaviour
     private void TowerComplete()
     {
         towerAlive = false;
-        spriteRenderer.sprite = BeaconPhases[BeaconPhases.Length - 1];
 
         towerManager.GetComponent<TowerManager>().TowerOnline(id);
         print("TOWER COMPLETE");

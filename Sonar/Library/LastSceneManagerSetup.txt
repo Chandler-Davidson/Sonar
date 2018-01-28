@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/terrain1.unity
+- path: Assets/Scenes/terrainBackup.unity
   isLoaded: 1
   isActive: 1
