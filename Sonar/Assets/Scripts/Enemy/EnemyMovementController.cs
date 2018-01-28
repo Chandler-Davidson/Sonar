@@ -64,14 +64,15 @@ public class EnemyMovementController : MonoBehaviour
         // Move to new position
         float step = actualMoveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, destination, step);
-    }
+	}
 
     void FollowPlayer()
     {
         // Move to player at max speed
         float step = moveSpeedMax * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
-    }
+        transform.LookAt(transform.position - player.transform.position);
+	}
 
     // Update destination
     void SetNewDestination()
@@ -82,8 +83,7 @@ public class EnemyMovementController : MonoBehaviour
         // Determine speed
         actualMoveSpeed = Random.Range(moveSpeedMin, moveSpeedMax);
 
-        //transform.LookAt(transform.position - destinationNode);
-        //transform.
+        transform.LookAt(transform.position - destinationNode);
 	}
 
     public void SetNewDestination(Vector3 pos) {
@@ -92,7 +92,8 @@ public class EnemyMovementController : MonoBehaviour
         actualMoveSpeed = moveSpeedMax;
 
         transform.LookAt(transform.position - pos);
-    }
+
+	}
 
     private void OnTriggerEnter(Collider other)
     {
