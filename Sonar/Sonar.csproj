@@ -104,17 +104,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\EnemyMovementController.cs" />
-    <Compile Include="Assets\Scripts\GateBehavior.cs" />
-    <Compile Include="Assets\Scripts\GatewayController.cs" />
+    <Compile Include="Assets\JMO Assets\Toony Colors\Demo 2.0\TCF_Demo.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMovementController.cs" />
+    <Compile Include="Assets\Scripts\Gate\GateBehavior.cs" />
+    <Compile Include="Assets\Scripts\Gate\GatewayController.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\CameraFollowScript.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
     <Compile Include="Assets\Scripts\PlayMusic.cs" />
-    <Compile Include="Assets\Scripts\TowerHealthController.cs" />
-    <Compile Include="Assets\Scripts\TowerManager.cs" />
-    <Compile Include="Assets\Scripts\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerHealthController.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\JMO Assets\Toony Colors\!ToonyColors Readme.txt" />
+    <None Include="Assets\JMO Assets\Toony Colors\Shaders 2.0\Regular.shader" />
+    <None Include="Assets\JMO Assets\Toony Colors\Shaders 2.0\Rim Alpha.shader" />
+    <None Include="Assets\JMO Assets\Toony Colors\Shaders 2.0\Rim Lighting.shader" />
+    <None Include="Assets\JMO Assets\Toony Colors\Shaders 2.0\Rim Outline.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

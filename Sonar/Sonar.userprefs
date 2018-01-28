@@ -1,11 +1,5 @@
 ﻿<Properties StartupConfiguration="{23311826-676A-6CFC-15F4-0622AA02736B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyController.cs">
-    <Files>
-      <File FileName="Assets/Scripts/TowerHealthController.cs" Line="106" Column="1" />
-      <File FileName="Assets/Scripts/EnemyMovementController.cs" Line="86" Column="49" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="23" Column="32" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Sonar PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
