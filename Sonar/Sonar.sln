@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar", "Sonar.csproj", "{23311826-676A-6CFC-15F4-0622AA02736B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar.Editor", "Sonar.Editor.csproj", "{04719F6A-BB33-F56E-A329-2AE654CA70F8}"

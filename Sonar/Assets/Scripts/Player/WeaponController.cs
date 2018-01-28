@@ -25,10 +25,44 @@ public class WeaponController : MonoBehaviour
 
     public EnemyController enemyController;
 
+    // sounds
+    public AudioClip sonarSfx;
+    public AudioClip weaponSfx;
+    private AudioSource dj;
+
+
+    // animation clips
+    Animator anim;
+    public AnimationClip idleClip;
+    public AnimationClip fireClip;
+    PlayerGlowAnim glowEffect;
+    float delta = 0.0f;
+    float duration;
+
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.Play(idleClip.name);
+        duration = fireClip.length;
+
+
         projectileSpawn = gunObject.transform;
+        dj = GameObject.FindObjectOfType<AudioSource>();
+
+        glowEffect = GetComponentInChildren<PlayerGlowAnim>();
+    }
+
+    void Update()
+    {
+        if (delta > 0.0f)
+        {
+            delta -= Time.deltaTime;
+            if (delta <= 0.0f)
+            {
+                anim.Play(idleClip.name);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -87,22 +121,29 @@ public class WeaponController : MonoBehaviour
         {
             bulletNextFire = Time.time + bulletFireRate;
             Fire(bulletProjectile, dir);
+            dj.PlayOneShot(weaponSfx);
         }
 
         // Fire sonar, right click
         else if (Input.GetButton("Fire2") && Time.time > sonarNextFire)
         {
             // Alert enemies
-            enemyController.SendSonar(transform.position);
+            //enemyController.SendSonar(transform.position);
 
             sonarNextFire = Time.time + sonarFireRate;
             Fire(sonarProjectile, dir);
+            dj.PlayOneShot(sonarSfx);
         }
     }
 
     // Shoot bullet/sonar
     void Fire(GameObject projectile, Vector3 dir)
     {
+        anim.Play(fireClip.name);
+        delta = duration;
+
+        glowEffect.Animate();
+
         // Spawn gameobject
         GameObject instance = (GameObject)Instantiate(
             projectile,
