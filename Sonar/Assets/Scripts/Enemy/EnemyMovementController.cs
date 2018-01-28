@@ -10,7 +10,7 @@ public class EnemyMovementController : MonoBehaviour
     // Movement destinations
     public GameObject NodeFolder;
     private Transform[] walkingNodes;
-    private Vector2 destinationNode;
+    private Vector3 destinationNode;
 
     // Move speeds
     public int moveSpeedMin;
@@ -81,12 +81,17 @@ public class EnemyMovementController : MonoBehaviour
 
         // Determine speed
         actualMoveSpeed = Random.Range(moveSpeedMin, moveSpeedMax);
-    }
+
+        //transform.LookAt(transform.position - destinationNode);
+        //transform.
+	}
 
     public void SetNewDestination(Vector3 pos) {
         destinationNode = pos;
 
         actualMoveSpeed = moveSpeedMax;
+
+        transform.LookAt(transform.position - pos);
     }
 
     private void OnTriggerEnter(Collider other)
