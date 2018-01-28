@@ -5,7 +5,6 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public GameObject gunObject;
-    public GameObject screenPlane;
 
     // Projectile to spawn
     public GameObject bulletProjectile;
@@ -48,20 +47,6 @@ public class WeaponController : MonoBehaviour
 
     void WeaponMovementUpdate(Vector3 dir)
     {
-        // Rotate player to follow cursor
-        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(/*new Vector3(*/Input.mousePosition/*.x, Input.mousePosition.y, Camera.main.nearClipPlane)*/);
-        //transform.rotation = Quaternion.LookRotation(Vector3.forward, (Vector3)mousePos - transform.position);
-
-        ////var mousePos = Input.mousePosition;
-        ////mousePos.z = Camera.main.nearClipPlane;
-        ////var point = Camera.main.ScreenToWorldPoint(mousePos);
-        ////Instantiate(Resources.Load("Sphere_Test"), point, transform.rotation);
-
-        //var mousePos = Input.mousePosition;
-        //mousePos.z = Camera.main.nearClipPlane;
-        //var point = Camera.main.ScreenToWorldPoint(mousePos);
-        //transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
-
         Quaternion q = new Quaternion();
         q = Quaternion.LookRotation(dir);//, Vector3.up);
         transform.rotation = Quaternion.Euler(90.0f, q.eulerAngles.y, 0.0f);
@@ -124,9 +109,6 @@ public class WeaponController : MonoBehaviour
             projectileSpawn.position,
             projectileSpawn.rotation);
         instance.name = projectile.name;
-
-        // Calculate "forward" TODO: Find last dir moved
-        //Vector3 dir = transform.up;
 
         // Fire projectile
         instance.GetComponent<Rigidbody>().AddForce(fireForce * dir);

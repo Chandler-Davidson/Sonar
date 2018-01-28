@@ -36,14 +36,14 @@ public class EnemyMovementController : MonoBehaviour
     {
         // If player is alive and enemy< enraged distance from player, attack
         if (player != null)
-            enraged = (Vector2.Distance(transform.position, player.transform.position) < enrageDistance);
+            enraged = (Vector3.Distance(transform.position, player.transform.position) < enrageDistance);
         else
             enraged = false;
 
         // TODO: Maybe if prev enraged, and now not assign new point
 
         // If at current node ish, update
-        if (!enraged && Vector2.Distance(transform.position, destinationNode) < 2)
+        if (!enraged && Vector3.Distance(transform.position, destinationNode) < 5)
         {
             SetNewDestination();
         }
@@ -59,7 +59,7 @@ public class EnemyMovementController : MonoBehaviour
     }
 
     // Update position each fram
-    void Walk(Vector2 destination)
+    void Walk(Vector3 destination)
     {
         // Move to new position
         float step = actualMoveSpeed * Time.deltaTime;
@@ -70,7 +70,7 @@ public class EnemyMovementController : MonoBehaviour
     {
         // Move to player at max speed
         float step = moveSpeedMax * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
     }
 
     // Update destination
@@ -83,7 +83,7 @@ public class EnemyMovementController : MonoBehaviour
         actualMoveSpeed = Random.Range(moveSpeedMin, moveSpeedMax);
     }
 
-    public void SetNewDestination(Vector2 pos) {
+    public void SetNewDestination(Vector3 pos) {
         destinationNode = pos;
 
         actualMoveSpeed = moveSpeedMax;
@@ -91,29 +91,18 @@ public class EnemyMovementController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)
-        {
-            case "Bullet":
-                // Hurt self
-                health--;
+        if (other.gameObject.tag == "Bullet") {
+	        // Hurt self
+	        health--;
 
-                // Dead
-                if (health <= 0)
-                {
-                    // TODO: Animation
-                    Destroy(this.gameObject);
-                }
+	        // Dead
+	        if (health <= 0)
+	        {
+	            // TODO: Animation
+	            Destroy(this.gameObject);
+	        }
 
-                break;
-            case "Player":
-                // Player's health handled in PlayerController.cs
-                break;
-            case "Sonar":
-                // Now covered in EnemyController
-
-                // Get player's current position
-                //destinationNode = player.transform.position;
-                break;
+            Destroy(other.gameObject);
         }
     }
 }

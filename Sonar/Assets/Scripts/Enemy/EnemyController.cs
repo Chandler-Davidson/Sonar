@@ -17,14 +17,14 @@ public class EnemyController : MonoBehaviour {
         
 	}
 
-    public void SendSonar(Vector2 playerPos) {
+    public void SendSonar(Vector3 playerPos) {
         foreach (EnemyMovementController enemy in enemies) {
 
             if (enemy != null)
             {
                 // Imperfect positioning
                 playerPos.x += Random.Range(-5, 5);
-                playerPos.y += Random.Range(-5, 5);
+                playerPos.z += Random.Range(-5, 5);
 
                 // Send destination
                 enemy.SetNewDestination(playerPos);

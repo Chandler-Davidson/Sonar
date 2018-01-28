@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
     <Compile Include="Assets\Scripts\PlayMusic.cs" />
+    <Compile Include="Assets\Scripts\projectileBehavior.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerHealthController.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerManager.cs" />
   </ItemGroup>
